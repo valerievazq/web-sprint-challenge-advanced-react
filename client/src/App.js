@@ -4,19 +4,18 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
-
 import "./App.css";
 
 function App() {
-  // array of plants that have been added to the cart
+  // plants on cart
   const [cart, setCart] = useState([]);
 
-  // add a plant to the cart
+  // add a plant
   const addToCart = (plant) => {
     setCart([...cart, plant]);
   };
 
-  // remove a plant from the cart
+  // remove a plant
   const removeFromCart = (plant) => {
     setCart(cart.filter((p) => p.id !== plant.id));
   };
