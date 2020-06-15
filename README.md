@@ -29,15 +29,20 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
-
+we create a stateful class component the following the CCR rule: creating the class component, use the constructor method and rendering our UI by returning our JSX.
 2. Describe the different phases of the component lifecycle.
-
+Component Lifecyles are necessary in order for React apps to make API requests and then render based on the data that was received. The Mounting Phase is when your render method is invoked and componentDidMount gets called as well. In the Growth/Updating phase you’re updating component data but using setState can be used to change the component’s state data, forcing a call to render. The unmounting phase includes removing the component from the screen.
 3. Demonstrate an understanding of class component lifecycle methods.
-
+ they are necessary in order for React apps to make API requests and then render based on the data that was received.
 4. Define stateful logic.
-
+Stateful logic is logic that is built into a component. It can be a function that handles a click event or maybe a function that sets toggle state, or even a function that formats data before it gets displayed.
 5. Describe how to test a React component with React Testing Library.
+we use Arrange, Act & Assert. 
+arrange takes what you want to test
+act uses methods to simulate user interactions
+assert makes sure the target has been rendered 
 
+	assert --> test that you are seeing the item and or that its expect() value is correct
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions

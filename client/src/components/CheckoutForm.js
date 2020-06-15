@@ -10,17 +10,11 @@ const initialValue = {
   zip: "",
 };
 
-// This form should be handled by a "useForm" custom hook
-// Build out the logic needed for a form custom hook (see the useForm.js file)
-// and replace the necessary stateful logic from CheckoutForm with the hook
-
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, setValues] = useForm(initialValue);
 
-  const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  //USEFORM CUSTOM ARRAY TO CONTROL STATEFUL LOGIC
+  const [values, handleChanges] = useForm(initialValue);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,6 +33,7 @@ const CheckoutForm = (props) => {
             onChange={handleChanges}
           />
         </label>
+
         <label>
           Last Name:
           <input
@@ -47,6 +42,7 @@ const CheckoutForm = (props) => {
             onChange={handleChanges}
           />
         </label>
+
         <label>
           Address:
           <input
@@ -55,6 +51,7 @@ const CheckoutForm = (props) => {
             onChange={handleChanges}
           />
         </label>
+
         <label>
           City:
           <input name="city" value={values.city} onChange={handleChanges} />
@@ -63,11 +60,13 @@ const CheckoutForm = (props) => {
           State:
           <input name="state" value={values.state} onChange={handleChanges} />
         </label>
+
         <label>
           Zip:
           <input name="zip" value={values.zip} onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+
+        <button data-testid="formSubmit">Checkout</button>
       </form>
 
       {showSuccessMessage && (
@@ -90,5 +89,4 @@ const CheckoutForm = (props) => {
     </>
   );
 };
-
 export default CheckoutForm;

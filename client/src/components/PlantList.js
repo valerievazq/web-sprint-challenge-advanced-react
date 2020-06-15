@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+
 export default class PlantList extends Component {
   constructor(props) {
     super();
@@ -8,9 +9,13 @@ export default class PlantList extends Component {
   };}
   componentDidMount() {
     axios
+    
+    //FETCHING THE DATA
+
       .get("http://localhost:3333/plants")
       .then((res) => {
         console.log(res.data.plantsData);
+    //SET THE RETURNED PLANTS ARRAY TO STATE
         this.setState({
           plants: res.data.plantsData,
         });
